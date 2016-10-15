@@ -27,8 +27,8 @@ class App extends React.Component {
     const hei = (i<2) ? '66.66%' : '33.33%';//getHei(i); // I don't remember and I don't care anymore
 
     return (
-      <div key={i} style={{width: wid, height: hei}}> // Set the size of the div to contain the Spot
-        <Spot /> // Spot will fill all the space it can, so the entire parent div
+      <div key={i} style={{width: wid, height: hei}}>
+        <Spot />
       </div>
     );
   }
