@@ -14,9 +14,9 @@ app.get('/', function(req, res) {
   });
 
   var params = {
-      screen_name: 'nodejs'
+      q: 'seahawks'
   };
-  client.get('statuses/user_timeline', params, function(error, tweets, response) {
+  client.get('search/tweets', params, function(error, tweets, response) {
       if (!error) {
           console.log("request complete");
           res.send(tweets)

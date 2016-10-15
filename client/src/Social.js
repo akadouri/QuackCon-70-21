@@ -16,8 +16,7 @@ class Social extends React.Component {
       dataType: 'json',
       cache: false,
       success: function(data) {
-        //console.log(data)
-        this.setState({data: data});
+        this.setState({data: data.statuses});
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(this.props.url, status, err.toString());
@@ -27,9 +26,13 @@ class Social extends React.Component {
 
   render () {
     return (
-      <div>
-        <p>test2</p>
-      </div>
+      <div style={{height:'30px', width:'200px'}}>
+        {this.state.data.map(function(tweet) {
+          return (
+            <Tweet data={tweet} />
+          );
+        })}
+       </div>
     );
   }
 }
