@@ -1,4 +1,19 @@
-var React = require('react');
+import React, { Component, PropTypes } from 'react';
+import { ItemTypes } from './Constants';
+import { DragSource } from 'react-dnd';
+
+const playbyplaySource = {
+  beginDrag(props) {
+    return {};
+  }
+};
+
+function collect(connect, monitor) {
+  return {
+    connectDragSource: connect.dragSource(),
+    isDragging: monitor.isDragging()
+  }
+}
 
 class PlayByPlay extends React.Component {
   constructor(props) {
@@ -17,11 +32,14 @@ class PlayByPlay extends React.Component {
   }
 
   render() {
-    var style = {
-      color:'white'
-    }
-    return (
-      <div style={style}>
+    const { connectDragSource, isDragging } = this.props;
+    return connectDragSource(
+      <div style={{
+        opacity: isDragging ? 0.5 : 1,
+        fontSize: 15,
+        fontWeight: 'bold',
+        cursor: 'move'
+      }}>
         <p>This Drive - PlayByPlay</p>
         {this.state.data.map(function(play) {
           return (
@@ -33,4 +51,9 @@ class PlayByPlay extends React.Component {
   }
 }
 
-module.exports = PlayByPlay;
+PlayByPlay.propTypes = {
+  connectDragSource: PropTypes.func.isRequired,
+  isDragging: PropTypes.bool.isRequired
+};
+
+export default DragSource(ItemTypes.PLAYBYPLAY, playbyplaySource, collect)(PlayByPlay);

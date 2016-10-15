@@ -1,7 +1,10 @@
-var React = require('react');
+import React, { Component } from 'react';
 var ReactPlayer = require('react-player')
-var PlayByPlay = require('./PlayByPlay')
+import PlayByPlay from './PlayByPlay'
 var PlayersOnField = require('./PlayersOnField')
+import { DragDropContext } from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
+
 
 class App extends React.Component {
   render() {
@@ -15,4 +18,4 @@ class App extends React.Component {
   }
 }
 
-module.exports = App;
+export default DragDropContext(HTML5Backend)(App);
