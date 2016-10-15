@@ -10,27 +10,21 @@ var Social = require('./Social');
 
 class App extends React.Component {
 
-  fillSpot(i) {
-    if (i==0) { return (<ReactPlayer url='https://www.youtube.com/watch?v=jIygo3bIVmo' playing width='100%' height='648px' />);}
-    if (i==1) { return (<Social />);}
-    if (i==2) { return (<PlayByPlay />);}
-    if (i==3) { return (<PlayersOnField />);}
-    return (<div></div>);
-  }
+
   renderSpots(i) {
     const wid = (i>0) ? '33.33%' : '66.66%';//getWid(i); // Do constants need to be initialized when they're declared?
     const hei = (i<2) ? '66.66%' : '33.33%';//getHei(i); // I don't remember and I don't care anymore
 
     return (
       <div key={i} style={{width: wid, height: hei}}>
-        <Spot child={this.fillSpot(i)} />
+        <Spot id={i} />
       </div>
     );
   }
 
   render() {
     const spots = []; // Using an array to hold all spots
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 5; i++) {
       spots.push(this.renderSpots(i)); // Spots will be sized by the renderSpots method
     }
     // Then we wrap all the spots into one big div
