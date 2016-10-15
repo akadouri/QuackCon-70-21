@@ -46,6 +46,8 @@ class App extends React.Component {
         flexWrap: 'wrap'
       }}>
         {spots}
+        <ReactPlayer url='https://www.youtube.com/watch?v=jIygo3bIVmo' playing />
+        <PlayByPlay />
       </div>
     );
   }

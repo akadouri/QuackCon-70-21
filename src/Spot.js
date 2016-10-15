@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 var ReactPlayer = require('react-player')
 import { DropTarget } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
@@ -10,6 +10,7 @@ const spotTarget = { // See: https://gaearon.github.io/react-dnd/docs-drop-targe
   }
   // TODO: Make a drop method to swap around modules
 };
+
 function collect(connect, monitor) { // See: https://gaearon.github.io/react-dnd/docs-drop-target-connector.html
   return {
     connectDropTarget: connect.dropTarget()
@@ -20,7 +21,7 @@ class Spot extends React.Component {
   render() {
     const { connectDropTarget } = this.props;
 
-    return connectDropTarget(
+    return (
       <div>
         {connectDropTarget} // pls
       </div>
@@ -28,4 +29,9 @@ class Spot extends React.Component {
   }
 }
 
-export default DropTarget(ItemTypes.MODULE, spotTarget, collect);
+/*Spot.propTypes = {
+  connectDragSource: PropTypes.func.isRequired,
+  isDragging: PropTypes.bool.isRequired
+};*/
+
+export default DropTarget(ItemTypes.MODULE, spotTarget, collect)(Spot);
