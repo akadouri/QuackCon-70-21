@@ -19,11 +19,11 @@ function collect(connect, monitor) { // See: https://gaearon.github.io/react-dnd
 
 class Spot extends React.Component {
   render() {
-    const { connectDropTarget } = this.props;
+    const { child, connectDropTarget } = this.props;
 
     return (
       <div>
-        {connectDropTarget} // pls
+        {child} // pls
       </div>
     );
   }
