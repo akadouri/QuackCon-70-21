@@ -18,20 +18,18 @@ function collect(connect, monitor) { // See: https://gaearon.github.io/react-dnd
 }
 
 class Spot extends React.Component {
+  clearChild() {
+    this.child = (<div></div>);
+  }
   render() {
     const { child, connectDropTarget } = this.props;
 
     return (
-      <div>
+      <div style={{display:'inline'}}>
         {child}
       </div>
     );
   }
 }
-
-/*Spot.propTypes = {
-  connectDragSource: PropTypes.func.isRequired,
-  isDragging: PropTypes.bool.isRequired
-};*/
 
 export default DropTarget(ItemTypes.MODULE, spotTarget, collect)(Spot);

@@ -11,7 +11,10 @@ var Social = require('./Social');
 class App extends React.Component {
 
   fillSpot(i) {
-    if (i==0) { return (<ReactPlayer url='https://www.youtube.com/watch?v=jIygo3bIVmo' playing width='100%' height='648px' />);}
+    if (i==0) { return (<div>
+                          <ReactPlayer url='https://www.youtube.com/watch?v=jIygo3bIVmo' playing width='100%' height='648px' />
+                          <p>put controls here</p>
+                        </div>);}
     if (i==1) { return (<Social />);}
     if (i==2) { return (<PlayByPlay />);}
     if (i==3) { return (<PlayersOnField />);}
