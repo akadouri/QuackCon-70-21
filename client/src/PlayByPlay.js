@@ -26,9 +26,9 @@ class PlayByPlay extends React.Component {
   componentDidMount() {
     var playbyplay = require('./play_by_play.json')
     this.setState({data: playbyplay.quarters[3].pbp[0].actions}, function() {
-      console.log(this.state.data)
-
+      //console.log(this.state.data) used to check data was being pushed to state
     })
+
   }
 
   render() {

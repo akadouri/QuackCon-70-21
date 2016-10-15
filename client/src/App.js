@@ -5,6 +5,7 @@ var PlayersOnField = require('./PlayersOnField')
 import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 import Spot from './Spot'
+var Social = require('./Social');
 
 
 class App extends React.Component {
@@ -46,8 +47,8 @@ class App extends React.Component {
         flexWrap: 'wrap'
       }}>
         {spots}
-        <ReactPlayer url='https://www.youtube.com/watch?v=jIygo3bIVmo' playing />
         <PlayByPlay />
+        <Social />
       </div>
     );
   }
