@@ -1,3 +1,4 @@
 export const ItemTypes = {
-  PLAYBYPLAY: 'playbyplay'
+  PLAYBYPLAY: 'playbyplay',
+  MODULE: 'module' // Let's just call all dragable objects modules...
 };
