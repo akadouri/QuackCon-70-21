@@ -10,7 +10,6 @@ var Social = require('./Social');
 
 class App extends React.Component {
 
-
   renderSpots(i) {
     const wid = (i>0) ? '33.33%' : '66.66%';//getWid(i); // Do constants need to be initialized when they're declared?
     const hei = (i<2) ? '66.66%' : '33.33%';//getHei(i); // I don't remember and I don't care anymore

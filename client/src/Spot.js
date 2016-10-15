@@ -4,19 +4,31 @@ import { DropTarget } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 import { ItemTypes } from './Constants';
 var Social = require('./Social');
-var PlayByPlay = require('./PlayByPlay');
+import PlayByPlay from './PlayByPlay';
 var PlayersOnField = require('./PlayersOnField');
 
 const spotTarget = { // See: https://gaearon.github.io/react-dnd/docs-drop-target.html
   canDrop(props) {
     return true; // TODO: Check if the space is available
+  },
+  drop(props, monitor, component) {
+      // Obtain the dragged item
+      const item = monitor.getItem();
+
+      // You can do something with it
+
+      // You can also do nothing and return a drop result,
+      // which will be available as monitor.getDropResult()
+      // in the drag source's endDrag() method
+      return { id:item.id };
   }
   // TODO: Make a drop method to swap around modules
 };
 
 function collect(connect, monitor) { // See: https://gaearon.github.io/react-dnd/docs-drop-target-connector.html
   return {
-    connectDropTarget: connect.dropTarget()
+    connectDropTarget: connect.dropTarget(),
+
   };
 }
 
@@ -30,21 +42,18 @@ function fillSpot(i) {
 }
 
 class Spot extends React.Component {
-  clearChild() {this.child = (<div></div>);}
+  clearChild() {
+    this.child = (<div></div>);
+  }
   render() {
     const { id, connectDropTarget } = this.props;
 
     return (
-      <div>
+      <div style={{display:'inline'}}>
         {fillSpot(id)}
       </div>
     );
   }
 }
-
-/*Spot.propTypes = {
-  connectDragSource: PropTypes.func.isRequired,
-  isDragging: PropTypes.bool.isRequired
-};*/
 
 export default DropTarget(ItemTypes.MODULE, spotTarget, collect)(Spot);

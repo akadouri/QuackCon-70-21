@@ -9,7 +9,7 @@ import { ItemTypes } from './Constants';
 const modSource = {
   beginDrag(props) {
     // Return the data describing the dragged item
-    const item = { module: props.id };
+    const item = { moduleid: props.id };
     return item;
   },
 
@@ -21,7 +21,6 @@ const modSource = {
     // When dropped on a compatible target, do something
     const item = monitor.getItem();
     const dropResult = monitor.getDropResult();
-    CardActions.moveCardToList(item.id, dropResult.listId);
   }
 };
 

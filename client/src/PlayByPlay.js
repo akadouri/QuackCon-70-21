@@ -51,9 +51,9 @@ class PlayByPlay extends React.Component {
   }
 }
 
-PlayByPlay.propTypes = {
+/*PlayByPlay.propTypes = {
   connectDragSource: PropTypes.func.isRequired,
   isDragging: PropTypes.bool.isRequired
-};
+};*/
 
 export default DragSource(ItemTypes.PLAYBYPLAY, playbyplaySource, collect)(PlayByPlay);
