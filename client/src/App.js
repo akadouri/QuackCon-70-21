@@ -10,18 +10,6 @@ var Social = require('./Social');
 
 class App extends React.Component {
 
-  /*function getWid(i) {
-    if (i > 0) { // Only the first spot (video) is wider than the others
-      return '33.33%';
-    }
-    return '66.66%';
-  }
-  function getHei(i) {
-    if (i < 2) { // The first two spots are taller, the last 3 are just squares
-      return '66.66%';
-    }
-    return '33.33%';
-  }*/
   fillSpot(i) {
     if (i==0) { return (<ReactPlayer url='https://www.youtube.com/watch?v=jIygo3bIVmo' playing width='100%' height='648px' />);}
     if (i==1) { return (<Social />);}
@@ -57,16 +45,6 @@ class App extends React.Component {
       </div>
     );
   }
-  /*
-  render() {
-    return (
-      <div>
-        <ReactPlayer url='https://www.youtube.com/watch?v=jIygo3bIVmo' playing />
-        <PlayByPlay />
-        <PlayersOnField />
-      </div>
-    );
-  }*/
 }
 
 export default DragDropContext(HTML5Backend)(App);

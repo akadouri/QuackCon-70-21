@@ -23,7 +23,7 @@ class Spot extends React.Component {
 
     return (
       <div>
-        {child} // pls
+        {child}
       </div>
     );
   }
