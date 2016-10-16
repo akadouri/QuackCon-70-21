@@ -19,4 +19,4 @@ npm start
 ```
 
 #What it should look like
-![sample screen shot](/progress.png?raw=true)
+![sample screen shot](https://raw.githubusercontent.com/akadouri/quackcon-70-21/master/progress3.png)
