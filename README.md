@@ -1,4 +1,5 @@
 # QuackCon-70-21
+[Dev Post Submission](http://devpost.com/software/game-grid)
 
 install instructions:
 ```
