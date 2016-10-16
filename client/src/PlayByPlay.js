@@ -4,8 +4,13 @@ import { DragSource } from 'react-dnd';
 
 const playbyplaySource = {
   beginDrag(props) {
-    return {};
-  }
+    return { id: 2 };
+  },
+  endDrag(props, monitor) {
+    const dropResult = monitor.getDropResult();
+    if (dropResult) {
+    }
+}
 };
 
 function collect(connect, monitor) {
@@ -56,4 +61,4 @@ class PlayByPlay extends React.Component {
   isDragging: PropTypes.bool.isRequired
 };*/
 
-export default DragSource(ItemTypes.PLAYBYPLAY, playbyplaySource, collect)(PlayByPlay);
+export default DragSource(ItemTypes.MODULE, playbyplaySource, collect)(PlayByPlay);

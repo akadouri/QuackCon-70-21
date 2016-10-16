@@ -15,9 +15,10 @@ const spotTarget = { // See: https://gaearon.github.io/react-dnd/docs-drop-targe
   drop(props, monitor, component) {
       // Obtain the dragged item
       const item = monitor.getItem();
-
+      console.log(item);
+      console.log("shit");
       // You can do something with it
-
+      this.setState({id: item.id});
       // You can also do nothing and return a drop result,
       // which will be available as monitor.getDropResult()
       // in the drag source's endDrag() method
@@ -29,7 +30,8 @@ const spotTarget = { // See: https://gaearon.github.io/react-dnd/docs-drop-targe
 function collect(connect, monitor) { // See: https://gaearon.github.io/react-dnd/docs-drop-target-connector.html
   return {
     connectDropTarget: connect.dropTarget(),
-
+    canDrop: monitor.canDrop(),
+    result: monitor.getDropResult()
   };
 }
 
@@ -47,15 +49,28 @@ function fillSpot(i) {
 }
 
 class Spot extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {id: props.id};
+  }
   clearChild() {
     this.child = (<div></div>);
   }
   render() {
-    const { id, connectDropTarget } = this.props;
-
-    return (
-      <div style={{display:'inline'}}>
-        {fillSpot(id)}
+    const { id, connectDropTarget, canDrop, result} = this.props;
+    var useNew = false;
+    console.log("ID:"+id);
+    console.log("RESULT:"+result);
+  //  var toUse = (useNew) ? result.id : id;
+    let backgroundColor = "#222";
+    if (canDrop) {
+      backgroundColor = 'darkgreen';
+    } else {
+      backgroundColor = 'darkred';
+    }
+    return connectDropTarget(
+      <div style={{display:'inline', backgroundColor}}>
+        {fillSpot(this.state.id)}
       </div>
     );
   }

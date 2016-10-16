@@ -13,7 +13,7 @@ const modSource = {
     return item;
   },
 
-  endDrag(props, monitor, component) {
+  endDrag(props, monitor) {
     if (!monitor.didDrop()) {
       return;
     }
@@ -21,6 +21,11 @@ const modSource = {
     // When dropped on a compatible target, do something
     const item = monitor.getItem();
     const dropResult = monitor.getDropResult();
+    
+    if (dropResult) {
+      console.log("dropResult:" + dropResult.id);
+      console.log("item:" + item.id);
+    }
   }
 };
 
