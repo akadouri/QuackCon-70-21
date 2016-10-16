@@ -17,3 +17,6 @@ cd ..
 cd client
 npm start
 ```
+
+#What it should look like
+![sample screen shot](progress.png)
