@@ -26,7 +26,10 @@ class Social extends React.Component {
 
   render () {
     return (
-      <div style={{height:'707.907px', width:'100%', overflow:'scroll'}}>
+      <div style={{height:'670.907px',
+                  width:'100%',
+                  overflow:'scroll',
+                  margin: '0 8px 0 8px'}}>
         {this.state.data.map(function(tweet) {
           return (
             <Tweet data={tweet} />

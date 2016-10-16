@@ -4,7 +4,9 @@ class Chat extends React.Component {
 
   render() {
     return (
-      <p> Chat Module here </p>
+      <div style={{height:'100%', background:'#607D8B'}}>
+        <p> Chat Module here </p>
+      </div>
     )
   }
 }

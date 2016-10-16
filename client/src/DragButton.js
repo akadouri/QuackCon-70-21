@@ -29,11 +29,12 @@ class DragButton extends React.Component {
         fontSize: 12,
         fontWeight: 'bold',
         cursor: 'move',
-        border: '1px solid black',
+        border: '1px solid #CFD8DC',
         display: 'inline',
-        backgroundColor: 'black'
+        backgroundColor: '#CFD8DC',
+        verticalAlign: 'top'
       }}>
-        <p style={{fontSize:'20'}}>{this.props.text}</p>
+        <p style={{fontSize:'20', color:'#757575'}}>{this.props.text}</p>
       </button>
     );
   }

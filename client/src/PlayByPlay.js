@@ -43,12 +43,16 @@ class PlayByPlay extends React.Component {
         opacity: isDragging ? 0.5 : 1,
         fontSize: 15,
         fontWeight: 'bold',
-        cursor: 'move'
+        cursor: 'move',
+        background:'#607D8B',
+        padding:'8px',
+        margin:'0 5px 5px 5px',
+        marginRight: '20px'
       }}>
-        <p style={{fontSize:'20'}}>This Drive - PlayByPlay</p>
+        <p style={{fontSize:'20', color:'#212121', margin:'0 5px 0 5px'}}>PlayByPlay - Current Drive - SEA</p>
         {this.state.data.map(function(play) {
           return (
-              <p>{play.clock}-{play.summary}</p>
+              <p style={{color:'#212121'}}>{play.clock}-{play.summary}</p>
           );
         })}
       </div>
