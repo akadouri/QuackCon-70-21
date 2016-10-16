@@ -7,6 +7,7 @@ var Social = require('./Social');
 import PlayByPlay from './PlayByPlay';
 var PlayersOnField = require('./PlayersOnField');
 var Chat = require('./Chat');
+import DragButton from './DragButton';
 
 const spotTarget = { // See: https://gaearon.github.io/react-dnd/docs-drop-target.html
   canDrop(props) {
@@ -42,6 +43,7 @@ function fillSpot(i) {
                         <ReactPlayer url='http://localhost:3000/videoplayback.mp4' playing width='100%' height='648px' />
                         <img src="./img/logo_game_grid.png" height="34px" style={{marginTop:'20px'}} />
                         <img src="./img/nfl_logo.png" height="50px" style={{marginTop:'10px'}}/>
+                        <DragButton id='0' text='Player' /><DragButton id='1' text='Social' /><DragButton id='2' text='PlayByPlay' /><DragButton id='3' text='PlayersOnField' />
                       </div>);}
   if (i==1) { return (<Social />);}
   if (i==2) { return (<PlayByPlay />);}
