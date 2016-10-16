@@ -26,6 +26,9 @@ app.get('/', function(req, res) {
   });
 });
 
+app.use(express.static('static'));
+
+
 app.listen(3000, function () {
   console.log('Server launched on port 3000');
 });

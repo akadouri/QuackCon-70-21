@@ -45,7 +45,7 @@ class PlayByPlay extends React.Component {
         fontWeight: 'bold',
         cursor: 'move'
       }}>
-        <p>This Drive - PlayByPlay</p>
+        <p style={{fontSize:'20'}}>This Drive - PlayByPlay</p>
         {this.state.data.map(function(play) {
           return (
               <p>{play.clock}-{play.summary}</p>
