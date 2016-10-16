@@ -6,6 +6,7 @@ import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 import Spot from './Spot'
 var Social = require('./Social');
+import { getID } from './Grid';
 
 
 class App extends React.Component {
@@ -16,7 +17,7 @@ class App extends React.Component {
 
     return (
       <div key={i} style={{width: wid, height: hei}}>
-        <Spot id={i} />
+        <Spot id={getID(i)} location={i} />
       </div>
     );
   }

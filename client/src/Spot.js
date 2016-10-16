@@ -15,10 +15,11 @@ const spotTarget = { // See: https://gaearon.github.io/react-dnd/docs-drop-targe
   drop(props, monitor, component) {
       // Obtain the dragged item
       const item = monitor.getItem();
-      console.log(item);
-      console.log("shit");
+      //console.log(item);
+      //console.log("shit");
       // You can do something with it
-      this.setState({id: item.id});
+      component.setState({id: item.id});
+
       // You can also do nothing and return a drop result,
       // which will be available as monitor.getDropResult()
       // in the drag source's endDrag() method
@@ -60,8 +61,8 @@ class Spot extends React.Component {
   render() {
     const { id, connectDropTarget, canDrop, result} = this.props;
     var useNew = false;
-    console.log("ID:"+id);
-    console.log("RESULT:"+result);
+    //console.log("ID:"+id);
+    //console.log("RESULT:"+result);
   //  var toUse = (useNew) ? result.id : id;
     let backgroundColor = "#222";
     if (canDrop) {
