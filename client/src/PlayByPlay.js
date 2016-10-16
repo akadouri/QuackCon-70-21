@@ -33,7 +33,7 @@ class PlayByPlay extends React.Component {
     this.setState({data: playbyplay.quarters[3].pbp[0].actions}, function() {
       //console.log(this.state.data) used to check data was being pushed to state
     })
-
+    
   }
 
   render() {
@@ -49,7 +49,7 @@ class PlayByPlay extends React.Component {
         margin:'0 5px 5px 5px',
         marginRight: '20px'
       }}>
-        <p style={{fontSize:'20', color:'#212121', margin:'0 5px 0 5px'}}>PlayByPlay - Current Drive - SEA</p>
+        <p style={{fontSize:'20', color:'#212121', margin:'0 5px 0 5px'}}>PlayByPlay - Current Drive - GB</p>
         {this.state.data.map(function(play) {
           return (
               <p style={{color:'#212121'}}>{play.clock}-{play.summary}</p>
