@@ -19,4 +19,4 @@ npm start
 ```
 
 #What it should look like
-![sample screen shot](progress.png)
+![sample screen shot](/progress.png?raw=true)
