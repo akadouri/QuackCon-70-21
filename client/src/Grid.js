@@ -1,10 +1,13 @@
-let ids = [0, 1, 2, 3, 4, 5];
+//ids correspond to modules in Spot.js
+let ids = [0, -1, -1, -1, -1, -1];
 let observer = null;
 
+//black magic
 function emitChange() {
   observer(ids);
 }
 
+//never used?
 export function observe(o) {
   if (observer) {
     throw new Error('Multiple observers not implemented.');
@@ -18,19 +21,6 @@ export function observe(o) {
   };
 }
 
-export function canMoveKnight(toX, toY) {
-  const [x, y] = knightPosition;
-  const dx = toX - x;
-  const dy = toY - y;
-
-  return (Math.abs(dx) === 2 && Math.abs(dy) === 1) ||
-         (Math.abs(dx) === 1 && Math.abs(dy) === 2);
-}
-/*
-export function moveKnight(toX, toY) {
-  knightPosition = [toX, toY];
-  emitChange();
-}*/
 export function getID(pos) {
   return ids[pos];
 }

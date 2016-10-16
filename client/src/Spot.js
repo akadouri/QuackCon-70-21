@@ -6,7 +6,7 @@ import { ItemTypes } from './Constants';
 var Social = require('./Social');
 import PlayByPlay from './PlayByPlay';
 var PlayersOnField = require('./PlayersOnField');
-var Chat = require('./Chat');
+var Fantasy = require('./Fantasy');
 import DragButton from './DragButton';
 
 const spotTarget = { // See: https://gaearon.github.io/react-dnd/docs-drop-target.html
@@ -45,17 +45,23 @@ function fillSpot(i) {
                           <img src="./img/logo_game_grid.png" height="34px" style={{paddingBottom:'12px', paddingLeft:'10px'}} />
                           <img src="./img/nfl_logo.png" height="60px" />
                           <DragButton id='0' text='Player' />
-                          <DragButton id='1' text='Social' />
+                          <DragButton id='1' text='Twitter' />
                           <DragButton id='2' text='PlayByPlay' />
                           <DragButton id='3' text='PlayersOnField' />
-                          <DragButton id='4' text='Chat' />
+                          <DragButton id='4' text='Fantasy' />
                         </div>
                       </div>);}
   if (i==1) { return (<Social />);}
   if (i==2) { return (<PlayByPlay />);}
   if (i==3) { return (<PlayersOnField />);}
-  if (i==4) { return (<Chat />)};
-  return (<div></div>);
+  if (i==4) { return (<Fantasy />)};
+  return (<div height="100%"><p style={{height:'100%',
+                                        textAlign: 'center',
+                                        verticalAalign: 'middle',
+                                        lineHeight:'25',
+                                        border: '1px solid #FFFFFF'}}>
+                                        Drag A Module Here</p>
+                      </div>);
 }
 
 class Spot extends React.Component {

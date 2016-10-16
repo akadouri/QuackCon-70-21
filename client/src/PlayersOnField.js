@@ -26,10 +26,12 @@ class PlayersOnField extends React.Component {
             float: 'left',
             background:'#607D8B',
             paddingLeft:'8px',
+            paddingTop:'16px',
             marginLeft: '8px',
             overflow:'hidden'}}>
           <center>
-            <img src="./img/seahawks_logo.png" width="50px" height="22px"/> Seahawks
+            <img src="./img/seahawks_logo.png" width="50px" height="22px" style={{verticalAlign:'middle', paddingRight:'5px', paddingBottom:'5px'}}/>
+            Seahawks
           </center>
           {this.state.sea_data.map(function(player) {
             return (
@@ -41,10 +43,12 @@ class PlayersOnField extends React.Component {
           margin: '0 0 0 220px',
           height: '100%',
           background:'#607D8B',
+          paddingTop:'16px',
           marginRight:'8px',
           overflow:'hidden'}}>
           <center>
-            <img src="./img/greenbay_logo.png" width="30px" height="30px"/> Greenbay
+            <img src="./img/greenbay_logo.png" width="30px" height="30px" style={{verticalAlign:'middle', paddingRight:'3px', paddingBottom:'5px'}}/>
+            Greenbay
           </center>
           <div style={{margin: '0 0 0 130px'}}>
             {this.state.green_data.map(function(player) {

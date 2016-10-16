@@ -8,20 +8,33 @@ class Social extends React.Component {
     this.state = {
       data: []
     };
+    this.timer;
   }
 
   componentDidMount() {
-    $.ajax({
-      url: 'http://localhost:3000/',
-      dataType: 'json',
-      cache: false,
-      success: function(data) {
-        this.setState({data: data.statuses});
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(this.props.url, status, err.toString());
-      }.bind(this)
-    });
+    function update() {$.ajax({
+        url: 'http://localhost:3000/',
+        dataType: 'json',
+        cache: false,
+        success: function(data) {
+          console.log('success')
+          this.setState({data: data.statuses});
+        }.bind(this),
+        error: function(xhr, status, err) {
+          console.log('fail')
+          console.error(this.props.url, status, err.toString());
+        }.bind(this)
+      });
+    }
+    update = update.bind(this);
+    update();
+    this.timer = setInterval(function() {
+      update() }, 10000);
+  }
+
+  componentWillUnmount() {
+    //kill the social interval timer
+    clearInterval(this.timer);
   }
 
   render () {
