@@ -34,7 +34,7 @@ class PlayersOnField extends React.Component {
         </div>
         <div style={{margin: '0 0 0 220px'}}>
           <center>
-            <img src="./img/greenbay_logo.png" width="30px" height="30px" align="bottom" /> Greenbay
+            <img src="./img/greenbay_logo.png" width="30px" height="30px"/> Greenbay
           </center>
           <div style={{margin: '0 0 0 130px'}}>
             {this.state.green_data.map(function(player) {
