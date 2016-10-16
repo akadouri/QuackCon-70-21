@@ -6,6 +6,7 @@ import { ItemTypes } from './Constants';
 var Social = require('./Social');
 import PlayByPlay from './PlayByPlay';
 var PlayersOnField = require('./PlayersOnField');
+var Chat = require('./Chat');
 
 const spotTarget = { // See: https://gaearon.github.io/react-dnd/docs-drop-target.html
   canDrop(props) {
@@ -34,10 +35,14 @@ function collect(connect, monitor) { // See: https://gaearon.github.io/react-dnd
 
 function fillSpot(i) {
   console.log(i);
-  if (i==0) { return (<ReactPlayer url='https://www.youtube.com/watch?v=jIygo3bIVmo' playing width='100%' height='648px' />);}
+  if (i==0) { return (<div>
+                        <ReactPlayer url='https://www.youtube.com/watch?v=jIygo3bIVmo' playing width='100%' height='648px' />
+                        <img src="./img/logo_game_grid.png" height="34px" style={{marginTop:'20px'}}/>
+                      </div>);}
   if (i==1) { return (<Social />);}
   if (i==2) { return (<PlayByPlay />);}
   if (i==3) { return (<PlayersOnField />);}
+  if (i==4) { return (<Chat />)};
   return (<div></div>);
 }
 

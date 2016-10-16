@@ -23,7 +23,7 @@ class App extends React.Component {
 
   render() {
     const spots = []; // Using an array to hold all spots
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 6; i++) {
       spots.push(this.renderSpots(i)); // Spots will be sized by the renderSpots method
     }
     // Then we wrap all the spots into one big div

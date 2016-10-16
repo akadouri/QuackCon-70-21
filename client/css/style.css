@@ -1,9 +1,14 @@
 body {
-  background: #2b2b2b;
+  background: #1e1e1e;
   line-height:1.6;
   font-size:16px;
 }
 p {
+  font-family: 'Titillium Web', sans-serif;
+  color: #FFFFFF
+}
+
+center {
   font-family: 'Titillium Web', sans-serif;
   color: #FFFFFF
 }
