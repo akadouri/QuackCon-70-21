@@ -24,8 +24,11 @@ class PlayByPlay extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: []
+      data: [],
+      data2: [],
+      count: 0
     };
+    this.timer;
   }
 
   componentDidMount() {
@@ -33,7 +36,25 @@ class PlayByPlay extends React.Component {
     this.setState({data: playbyplay.quarters[3].pbp[0].actions}, function() {
       //console.log(this.state.data) used to check data was being pushed to state
     })
-    
+    function update() {
+      var temp = this.state.data2;
+      temp.push(playbyplay.quarters[3].pbp[0].actions[this.state.count]);
+      this.setState({count: this.state.count+1});
+      this.setState({data2: temp});
+      if(this.state.count == 4) {
+        clearInterval(this.timer);
+      }
+    }
+    update = update.bind(this);
+    update();
+    this.timer = setInterval(function() {
+      update();
+    }, 15000);
+  }
+
+  componentWillUnmount() {
+    //kill the social interval timer
+    clearInterval(this.timer);
   }
 
   render() {
@@ -50,7 +71,7 @@ class PlayByPlay extends React.Component {
         marginRight: '20px'
       }}>
         <p style={{fontSize:'20', color:'#212121', margin:'0 5px 0 5px'}}>PlayByPlay - Current Drive - GB</p>
-        {this.state.data.map(function(play) {
+        {this.state.data2.map(function(play) {
           return (
               <p style={{color:'#212121'}}>{play.clock}-{play.summary}</p>
           );
