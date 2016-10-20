@@ -7,10 +7,11 @@ app.use(cors({origin: 'http://localhost:8080'}));
 
 app.get('/', function(req, res) {
   var client = new Twitter({
-    consumer_key: 'phM76OewswmymI0k2TkTktVds',
-    consumer_secret: 'eXQO9zXgykkIkuggz3Cqxu4kJ7EPqSQ7NmD2D3vVnvf0QviNM1',
-    access_token_key: '215404498-fA8nIKA7eZdpGmoE781Azv94T30GHYCmPt5QGCad',
-    access_token_secret: '6wBZ3uuyxpAuHAQj1R3oCiyGPBpHl88kHdu82E8An079K'
+    //Register for an account at apps.twitter.com
+    consumer_key: '',
+    consumer_secret: '',
+    access_token_key: '',
+    access_token_secret: ''
   });
 
   var params = {

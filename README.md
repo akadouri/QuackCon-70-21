@@ -1,4 +1,6 @@
-# QuackCon-70-21
+# QuackCon-70-21 - GameGrid - 3rd Place
+[Live demo](https://raw.githubusercontent.com/akadouri/quackcon-70-21/master/marketing/progress3.png)
+
 [Dev Post Submission](http://devpost.com/software/game-grid)
 
 install instructions:
@@ -19,5 +21,7 @@ cd client
 npm start
 ```
 
+note: the index.js server is only necessary if you want a live twitter feed or are hosting your own video
+
 #What it should look like
-![sample screen shot](https://raw.githubusercontent.com/akadouri/quackcon-70-21/master/progress3.png)
+![sample screen shot](https://raw.githubusercontent.com/akadouri/quackcon-70-21/master/marketing/progress3.png)
