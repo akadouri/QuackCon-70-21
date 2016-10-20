@@ -1,5 +1,6 @@
 # QuackCon-70-21 - GameGrid - 3rd Place
 [Live demo](https://akadouri.github.io/QuackCon-70-21/)
+Unfortunately, the NFL does not allow youtube video playback in third party applications, so the video is just an ad.
 
 [Dev Post Submission](http://devpost.com/software/game-grid)
 
