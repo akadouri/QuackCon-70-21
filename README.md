@@ -1,5 +1,5 @@
 # QuackCon-70-21 - GameGrid - 3rd Place
-[Live demo](https://raw.githubusercontent.com/akadouri/quackcon-70-21/master/marketing/progress3.png)
+[Live demo](https://akadouri.github.io/QuackCon-70-21/)
 
 [Dev Post Submission](http://devpost.com/software/game-grid)
 
