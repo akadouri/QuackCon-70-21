@@ -12,13 +12,15 @@ class Social extends React.Component {
   }
 
   componentDidMount() {
-    function update() {$.ajax({
+    /*function update() {
+      $.ajax({
         url: 'http://localhost:3000/',
         dataType: 'json',
         cache: false,
         success: function(data) {
+          console.log(data);
           console.log('success')
-          this.setState({data: data.statuses});
+          this.setState({data: data});
         }.bind(this),
         error: function(xhr, status, err) {
           console.log('fail')
@@ -29,7 +31,9 @@ class Social extends React.Component {
     update = update.bind(this);
     update();
     this.timer = setInterval(function() {
-      update() }, 10000);
+      update() }, 10000);*/
+    var data = require('./tweets.json');
+    this.setState({data: data});
   }
 
   componentWillUnmount() {

@@ -7,18 +7,19 @@ app.use(cors({origin: 'http://localhost:8080'}));
 
 app.get('/', function(req, res) {
   var client = new Twitter({
-    consumer_key: 'c2tIJ5ncViEBrvmVarPMxTlPE',
-    consumer_secret: 'wN9aFLu4QOKtCyNMYdhltV82CUFjmjBco1Scr3WMhJZL2i8WKC',
-    access_token_key: '215404498-w7ljMAOH2PFVWtfMVaXF0O7E6eM0dvMxJziA7Nb3',
-    access_token_secret: 'qjto1EqV9OMcLgjNbif7yUvaiCQQChLsrvBmfPKBGbgJI'
+    consumer_key: 'phM76OewswmymI0k2TkTktVds',
+    consumer_secret: 'eXQO9zXgykkIkuggz3Cqxu4kJ7EPqSQ7NmD2D3vVnvf0QviNM1',
+    access_token_key: '215404498-fA8nIKA7eZdpGmoE781Azv94T30GHYCmPt5QGCad',
+    access_token_secret: '6wBZ3uuyxpAuHAQj1R3oCiyGPBpHl88kHdu82E8An079K'
   });
 
   var params = {
-      q: 'seahawks'
+      screen_name: 'seahawks'
   };
-  client.get('search/tweets', params, function(error, tweets, response) {
+  client.get('statuses/user_timeline', params, function(error, tweets, response) {
       if (!error) {
           console.log("request complete");
+          console.log(tweets);
           res.send(tweets)
       }else {
         console.log(error)

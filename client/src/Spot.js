@@ -40,7 +40,7 @@ function collect(connect, monitor) { // See: https://gaearon.github.io/react-dnd
 function fillSpot(i) {
   console.log(i);
   if (i==0) { return (<div>
-                        <ReactPlayer style={{background:'black'}} url='http://localhost:3000/videoplayback.mp4' playing width='100%' height='600px' />
+                        <ReactPlayer style={{background:'black'}} url='https://www.youtube.com/watch?v=mkumGfsv-H4' playing width='100%' height='600px' />
                         <div style={{diplay:'inline-block', background:'#CFD8DC'}}>
                           <img src="./img/logo_game_grid.png" height="34px" style={{paddingBottom:'12px', paddingLeft:'10px'}} />
                           <img src="./img/nfl_logo.png" height="60px" />
